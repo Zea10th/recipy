@@ -10,3 +10,6 @@ Thumbs.db
 
 # Logs
 *.log
+
+# Draw.io
+.$*.drawio.bkp
