@@ -166,6 +166,13 @@
                     </div>
                 </section>
 
+                <!-- External recipes section — populated from TheMealDB API by api.js -->
+                <section id="external-recipes" aria-label="Discover more recipes from external source">
+                    <h2>Discover More Recipes</h2>
+                    <div id="external-recipe-container" class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4">
+                    </div>
+                </section>
+
                 <!-- Media data table -->
                 <section id="media-library" class="scroll-reveal" data-scroll-reveal aria-label="Recipe media library">
                     <h2>Media Library</h2>
@@ -272,6 +279,31 @@
         </div>
     </div>
 
+    <!-- External Recipe Detail Modal — displays TheMealDB full meal data -->
+    <div class="modal fade" id="externalRecipeDetailModal" tabindex="-1"
+         aria-labelledby="externalModalTitle" aria-modal="true" role="dialog">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title h5" id="externalModalTitle">Recipe details</h2>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="externalModalBody">
+                    <img id="externalModalImage" class="img-fluid w-100 mb-3 rounded" src="" alt="">
+                    <div class="mb-2">
+                        <span id="externalModalCategory" class="badge me-2"></span>
+                        <span id="externalModalOrigin" class="text-muted small"></span>
+                    </div>
+                    <h3 class="h6 fw-bold mt-3">Ingredients</h3>
+                    <ul id="externalModalIngredients" class="list-unstyled mb-3"></ul>
+                    <h3 class="h6 fw-bold">Instructions</h3>
+                    <p id="externalModalInstructions"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Footer -->
     <footer>
         <div class="container">
@@ -289,6 +321,7 @@
             crossorigin="anonymous">
     </script>
     <script src="js/recipes.js" defer></script>
+    <script src="js/api.js" defer></script>
     <script src="js/app.js" defer></script>
 </body>
 </html>
