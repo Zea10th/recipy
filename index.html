@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipy — Find Your Perfect Recipe</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <header>
+        <nav id="main-navigation" aria-label="Main navigation">
+            <div class="container">
+                <a class="nav-brand" href="index.html">Recipy</a>
+                <ul>
+                    <li><a class="nav-link nav-link--active" href="index.html" aria-current="page">Home</a></li>
+                    <li><a class="nav-link" href="recipes.html">Recipes</a></li>
+                    <li><a class="nav-link" href="about.html">About</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- Hero Section -->
+        <section id="hero">
+            <div class="container">
+                <h1>Find Your Perfect Recipe, Fast</h1>
+                <p>Discover meals that fit your time, dietary needs, and tastes — from quick weeknight dinners to weekend feasts.</p>
+                <a class="btn-primary" href="recipes.html">Browse Recipes</a>
+            </div>
+        </section>
+
+        <!-- Feature Highlights -->
+        <section id="features" class="section">
+            <div class="container">
+                <h2 class="section-title">Why Recipy?</h2>
+                <ul class="features-list">
+                    <li>
+                        <span class="feature-icon" aria-hidden="true">⏱️</span>
+                        Filter by active prep time — not total cooking time
+                    </li>
+                    <li>
+                        <span class="feature-icon" aria-hidden="true">🥗</span>
+                        Match your dietary needs — vegetarian, vegan, gluten-free
+                    </li>
+                    <li>
+                        <span class="feature-icon" aria-hidden="true">📊</span>
+                        See full nutrition info at a glance
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- How It Works -->
+        <section id="how-it-works" class="section">
+            <div class="container">
+                <h2 class="section-title">How It Works</h2>
+                <ol class="steps-list">
+                    <li>
+                        <strong>Set your preferences</strong>
+                        <p>Choose your dietary needs, available time, and meal type.</p>
+                    </li>
+                    <li>
+                        <strong>Browse matching recipes</strong>
+                        <p>Explore recipes filtered to your exact criteria.</p>
+                    </li>
+                    <li>
+                        <strong>Cook and enjoy</strong>
+                        <p>Follow step-by-step instructions and savour the result.</p>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- Featured Recipes Preview -->
+        <section id="featured-recipes" class="section">
+            <div class="container">
+                <h2 class="section-title">Featured Recipes</h2>
+                <div class="recipe-grid">
+
+                    <!-- Recipe 1: Spaghetti Carbonara -->
+                    <article class="recipe-card" data-recipe-id="1">
+                        <div class="recipe-card__image-wrap">
+                            <img
+                                class="recipe-card__image"
+                                src="https://placehold.co/600x400/e76f51/ffffff?text=Spaghetti+Carbonara"
+                                alt="A bowl of spaghetti carbonara with crispy guanciale and a dusting of black pepper">
+                            <div class="recipe-card__overlay" aria-hidden="true">
+                                <span>Spaghetti Carbonara</span>
+                            </div>
+                        </div>
+                        <div class="recipe-card__body">
+                            <span class="recipe-card__category">Italian</span>
+                            <h3 class="recipe-card__title">Spaghetti Carbonara</h3>
+                            <ul class="recipe-card__tags">
+                                <li>Quick</li>
+                                <li>Pasta</li>
+                            </ul>
+                            <div class="recipe-card__meta">
+                                <span>⏱ 20 min active</span>
+                                <span>🕒 25 min total</span>
+                                <span>Easy</span>
+                            </div>
+                            <p class="recipe-card__description">Classic Roman pasta made with eggs, Pecorino Romano, guanciale, and black pepper — no cream required.</p>
+                        </div>
+                    </article>
+
+                    <!-- Recipe 2: Thai Green Curry -->
+                    <article class="recipe-card" data-recipe-id="2">
+                        <div class="recipe-card__image-wrap">
+                            <img
+                                class="recipe-card__image"
+                                src="https://placehold.co/600x400/2a9d8f/ffffff?text=Thai+Green+Curry"
+                                alt="A bowl of fragrant Thai green curry with coconut milk and fresh basil">
+                            <div class="recipe-card__overlay" aria-hidden="true">
+                                <span>Thai Green Curry</span>
+                            </div>
+                        </div>
+                        <div class="recipe-card__body">
+                            <span class="recipe-card__category">Thai</span>
+                            <h3 class="recipe-card__title">Thai Green Curry</h3>
+                            <ul class="recipe-card__tags">
+                                <li>Vegetarian</li>
+                                <li>Spicy</li>
+                            </ul>
+                            <div class="recipe-card__meta">
+                                <span>⏱ 15 min active</span>
+                                <span>🕒 35 min total</span>
+                                <span>Medium</span>
+                            </div>
+                            <p class="recipe-card__description">Aromatic green curry with coconut milk, Thai basil, and your choice of vegetables or chicken.</p>
+                        </div>
+                    </article>
+
+                    <!-- Recipe 3: Avocado Toast -->
+                    <article class="recipe-card" data-recipe-id="3">
+                        <div class="recipe-card__image-wrap">
+                            <img
+                                class="recipe-card__image"
+                                src="https://placehold.co/600x400/264653/ffffff?text=Avocado+Toast"
+                                alt="Thick-cut sourdough toast topped with smashed avocado and chilli flakes">
+                            <div class="recipe-card__overlay" aria-hidden="true">
+                                <span>Avocado Toast</span>
+                            </div>
+                        </div>
+                        <div class="recipe-card__body">
+                            <span class="recipe-card__category">American</span>
+                            <h3 class="recipe-card__title">Avocado Toast</h3>
+                            <ul class="recipe-card__tags">
+                                <li>Vegan</li>
+                                <li>Breakfast</li>
+                            </ul>
+                            <div class="recipe-card__meta">
+                                <span>⏱ 5 min active</span>
+                                <span>🕒 5 min total</span>
+                                <span>Easy</span>
+                            </div>
+                            <p class="recipe-card__description">Creamy smashed avocado on toasted sourdough with lemon, chilli flakes, and sea salt.</p>
+                        </div>
+                    </article>
+
+                </div>
+                <div style="text-align: center; margin-top: 2rem;">
+                    <a class="btn-secondary" href="recipes.html">See All Recipes</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Recipy. All rights reserved.</p>
+            <ul class="footer-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="recipes.html">Recipes</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </div>
+    </footer>
+
+</body>
+</html>

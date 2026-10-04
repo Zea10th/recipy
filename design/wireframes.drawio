@@ -1,0 +1,368 @@
+<mxfile host="Electron" agent="Claude Code" pages="4">
+  <diagram id="FlowDiagram" name="Flow">
+    <mxGraphModel dx="1030" dy="756" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#000000;fontColor=#ffffff;strokeColor=#000000;fontSize=11;fontStyle=1;" value="Start" vertex="1">
+          <mxGeometry height="50" width="50" x="50" y="365" as="geometry" />
+        </mxCell>
+        <mxCell id="3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontSize=11;verticalAlign=middle;" value="&lt;b&gt;Home&lt;/b&gt;&lt;br&gt;(User discovers app, understands purpose)" vertex="1">
+          <mxGeometry height="80" width="250" x="190" y="350" as="geometry" />
+        </mxCell>
+        <mxCell id="4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontSize=11;verticalAlign=middle;" value="&lt;b&gt;Recipes&lt;/b&gt;&lt;br&gt;(User searches and finds a matching recipe)" vertex="1">
+          <mxGeometry height="80" width="250" x="570" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="5" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontSize=11;verticalAlign=middle;" value="&lt;b&gt;About&lt;/b&gt;&lt;br&gt;(User learns app mission, sends feedback)" vertex="1">
+          <mxGeometry height="80" width="250" x="570" y="620" as="geometry" />
+        </mxCell>
+        <mxCell id="6" edge="1" parent="1" source="2" style="edgeStyle=orthogonalEdgeStyle;fontSize=10;fontStyle=2;" target="3" value="(entry point)">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7" edge="1" parent="1" source="3" style="edgeStyle=orthogonalEdgeStyle;fontSize=10;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="4" value="&quot;clicks Browse Recipes CTA&quot;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="8" edge="1" parent="1" source="3" style="edgeStyle=orthogonalEdgeStyle;fontSize=10;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;" target="4" value="&quot;clicks Recipes nav link&quot;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="530" y="390" />
+              <mxPoint x="530" y="160" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="9" edge="1" parent="1" source="3" style="edgeStyle=orthogonalEdgeStyle;fontSize=10;exitX=1;exitY=0.75;exitDx=0;exitDy=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;" target="5" value="&quot;clicks About nav link&quot;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="10" edge="1" parent="1" source="4" style="edgeStyle=orthogonalEdgeStyle;fontSize=10;entryX=0.75;entryY=0;entryDx=0;entryDy=0;curved=1;exitX=0;exitY=0.25;exitDx=0;exitDy=0;" target="3" value="&quot;clicks Home nav link&quot;">
+          <mxGeometry relative="1" x="-0.3373" y="50" as="geometry">
+            <mxPoint as="offset" />
+            <mxPoint x="420" y="120" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="11" edge="1" parent="1" source="4" style="edgeStyle=orthogonalEdgeStyle;fontSize=10;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="5" value="&quot;clicks About nav link&quot;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="12" edge="1" parent="1" source="5" style="edgeStyle=orthogonalEdgeStyle;fontSize=10;exitX=0;exitY=0.75;exitDx=0;exitDy=0;entryX=0.75;entryY=1;entryDx=0;entryDy=0;curved=1;" target="3" value="&quot;clicks Home nav link&quot;">
+          <mxGeometry relative="1" x="0.1864" y="-42" as="geometry">
+            <mxPoint x="1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="13" edge="1" parent="1" source="5" style="edgeStyle=orthogonalEdgeStyle;fontSize=10;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" target="4" value="&quot;clicks Recipes nav link&quot;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="HomeWireframe" name="Home">
+    <mxGraphModel dx="1212" dy="889" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;align=left;spacingTop=4;spacingLeft=8;fontSize=10;fontStyle=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="[Section: Navigation Bar]" vertex="1">
+          <mxGeometry height="70" width="1129" x="20" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontSize=10;fillColor=#f5f5f5;strokeColor=#999999;" value="[nav] Recipy logo" vertex="1">
+          <mxGeometry height="34" width="130" x="35" y="46" as="geometry" />
+        </mxCell>
+        <mxCell id="4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontSize=10;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;" value="[nav] Home → index.html (ACTIVE)" vertex="1">
+          <mxGeometry height="34" width="170" x="730" y="46" as="geometry" />
+        </mxCell>
+        <mxCell id="5" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontSize=10;fillColor=#f5f5f5;strokeColor=#999999;" value="[nav] Recipes → recipes.html" vertex="1">
+          <mxGeometry height="34" width="120" x="910" y="46" as="geometry" />
+        </mxCell>
+        <mxCell id="6" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontSize=10;fillColor=#f5f5f5;strokeColor=#999999;" value="[nav] About → about.html" vertex="1">
+          <mxGeometry height="34" width="100" x="1040" y="46" as="geometry" />
+        </mxCell>
+        <mxCell id="7" parent="1" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;align=left;spacingTop=4;spacingLeft=8;fontSize=10;fontStyle=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="[Section: Hero]" vertex="1">
+          <mxGeometry height="140" width="1129" x="20" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="8" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontSize=13;fontStyle=1;fillColor=#fffde7;strokeColor=#cccc00;" value="[text placeholder: Headline] — Find Your Perfect Recipe, Fast" vertex="1">
+          <mxGeometry height="40" width="570" x="300" y="118" as="geometry" />
+        </mxCell>
+        <mxCell id="9" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontSize=11;fillColor=#fffde7;strokeColor=#cccc00;" value="[text placeholder: Subheadline] — For busy people who love to eat" vertex="1">
+          <mxGeometry height="30" width="470" x="350" y="165" as="geometry" />
+        </mxCell>
+        <mxCell id="10" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontSize=11;fontStyle=1;fillColor=#f8cecc;strokeColor=#b85450;" value="[btn] Browse Recipes → recipes.html" vertex="1">
+          <mxGeometry height="30" width="210" x="480" y="202" as="geometry" />
+        </mxCell>
+        <mxCell id="11" parent="1" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;align=left;spacingTop=4;spacingLeft=8;fontSize=10;fontStyle=1;fillColor=#e1d5e7;strokeColor=#9673a6;" value="[Section: Feature Highlights]" vertex="1">
+          <mxGeometry height="110" width="1129" x="20" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="12" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontSize=10;fillColor=#f5f5f5;strokeColor=#999999;" value="[ul] Filter by active prep time&#xa;(set max minutes you can spend cooking)" vertex="1">
+          <mxGeometry height="70" width="340" x="40" y="285" as="geometry" />
+        </mxCell>
+        <mxCell id="13" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontSize=10;fillColor=#f5f5f5;strokeColor=#999999;" value="[ul] Match dietary preferences&#xa;(vegetarian, vegan, gluten-free)" vertex="1">
+          <mxGeometry height="70" width="340" x="405" y="285" as="geometry" />
+        </mxCell>
+        <mxCell id="14" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontSize=10;fillColor=#f5f5f5;strokeColor=#999999;" value="[ul] See full nutrition info&#xa;(calories, protein, carbs per serving)" vertex="1">
+          <mxGeometry height="70" width="340" x="770" y="285" as="geometry" />
+        </mxCell>
+        <mxCell id="15" parent="1" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;align=left;spacingTop=4;spacingLeft=8;fontSize=10;fontStyle=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="[Section: How It Works]" vertex="1">
+          <mxGeometry height="100" width="1129" x="20" y="390" as="geometry" />
+        </mxCell>
+        <mxCell id="16" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontSize=10;fillColor=#f5f5f5;strokeColor=#999999;" value="[ol] 1. Set your preferences" vertex="1">
+          <mxGeometry height="60" width="230" x="140" y="415" as="geometry" />
+        </mxCell>
+        <mxCell id="17" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontSize=10;fillColor=#f5f5f5;strokeColor=#999999;" value="[ol] 2. Browse matching recipes" vertex="1">
+          <mxGeometry height="60" width="230" x="470" y="415" as="geometry" />
+        </mxCell>
+        <mxCell id="18" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontSize=10;fillColor=#f5f5f5;strokeColor=#999999;" value="[ol] 3. Cook and enjoy" vertex="1">
+          <mxGeometry height="60" width="230" x="800" y="415" as="geometry" />
+        </mxCell>
+        <mxCell id="19" parent="1" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;align=left;spacingTop=4;spacingLeft=8;fontSize=10;fontStyle=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="[Section: Featured Recipes]" vertex="1">
+          <mxGeometry height="240" width="1129" x="20" y="510" as="geometry" />
+        </mxCell>
+        <mxCell id="20" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontSize=10;fillColor=#f5f5f5;strokeColor=#999999;verticalAlign=top;align=left;spacingLeft=4;" value="[img] alt=&quot;Spaghetti Carbonara&quot;&#xa;[overlay] Spaghetti Carbonara (on hover)&#xa;[h3] Spaghetti Carbonara&#xa;[span] Italian  [span] Easy&#xa;[ul] Pasta / Egg-based&#xa;[span] Active: 20 min  [span] Total: 25 min&#xa;[p] Classic Roman pasta dish" vertex="1">
+          <mxGeometry height="200" width="330" x="40" y="535" as="geometry" />
+        </mxCell>
+        <mxCell id="21" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontSize=10;fillColor=#f5f5f5;strokeColor=#999999;verticalAlign=top;align=left;spacingLeft=4;" value="[img] alt=&quot;Thai Green Curry&quot;&#xa;[overlay] Thai Green Curry (on hover)&#xa;[h3] Thai Green Curry&#xa;[span] Thai  [span] Medium&#xa;[ul] Vegan-adaptable / Spicy&#xa;[span] Active: 15 min  [span] Total: 35 min&#xa;[p] Aromatic coconut curry" vertex="1">
+          <mxGeometry height="200" width="330" x="400" y="535" as="geometry" />
+        </mxCell>
+        <mxCell id="22" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontSize=10;fillColor=#f5f5f5;strokeColor=#999999;verticalAlign=top;align=left;spacingLeft=4;" value="[img] alt=&quot;Avocado Toast&quot;&#xa;[overlay] Avocado Toast (on hover)&#xa;[h3] Avocado Toast&#xa;[span] American  [span] Easy&#xa;[ul] Vegetarian / Quick&#xa;[span] Active: 5 min  [span] Total: 5 min&#xa;[p] Simple nutritious breakfast" vertex="1">
+          <mxGeometry height="200" width="330" x="760" y="535" as="geometry" />
+        </mxCell>
+        <mxCell id="23" parent="1" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=middle;align=center;fontSize=10;fontStyle=1;fillColor=#f5f5f5;strokeColor=#999999;" value="[Section: Footer] — © Recipy  |  [nav] Home  |  [nav] Recipes  |  [nav] About" vertex="1">
+          <mxGeometry height="50" width="1129" x="20" y="770" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="RecipesWireframe" name="Recipes">
+    <mxGraphModel grid="1" page="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" pageScale="1" pageWidth="1169" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;align=left;spacingTop=4;spacingLeft=8;fontSize=10;fontStyle=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="[Section: Navigation Bar]" vertex="1">
+          <mxGeometry height="70" width="1129" x="20" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontSize=10;fillColor=#f5f5f5;strokeColor=#999999;" value="[nav] Recipy logo" vertex="1">
+          <mxGeometry height="34" width="130" x="32" y="46" as="geometry" />
+        </mxCell>
+        <mxCell id="4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontSize=10;fillColor=#f5f5f5;strokeColor=#999999;" value="[nav] Home → index.html" vertex="1">
+          <mxGeometry height="34" width="130" x="727" y="46" as="geometry" />
+        </mxCell>
+        <mxCell id="5" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontSize=10;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;" value="[nav] Recipes → recipes.html (ACTIVE)" vertex="1">
+          <mxGeometry height="34" width="170" x="867" y="46" as="geometry" />
+        </mxCell>
+        <mxCell id="6" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontSize=10;fillColor=#f5f5f5;strokeColor=#999999;" value="[nav] About → about.html" vertex="1">
+          <mxGeometry height="34" width="90" x="1047" y="46" as="geometry" />
+        </mxCell>
+        <mxCell id="7" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontSize=14;fontStyle=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="[h1] Find Your Perfect Recipe" vertex="1">
+          <mxGeometry height="50" width="1129" x="20" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="8" parent="1" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;align=left;spacingTop=4;spacingLeft=8;fontSize=10;fontStyle=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="[Section: Filter Form — id=&quot;recipe-search-form&quot;]" vertex="1">
+          <mxGeometry height="280" width="1129" x="20" y="170" as="geometry" />
+        </mxCell>
+        <mxCell id="9" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontSize=10;fillColor=#f5f5f5;strokeColor=#999999;" value="[text] Search recipes&#xa;(name=&quot;keyword&quot;)" vertex="1">
+          <mxGeometry height="60" width="250" x="40" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="10" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontSize=10;fillColor=#f5f5f5;strokeColor=#999999;" value="[select] Dietary preference&#xa;(name=&quot;dietary&quot;)&#xa;Options: Any / Vegetarian / Vegan / Gluten-Free" vertex="1">
+          <mxGeometry height="60" width="280" x="310" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="11" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontSize=10;fillColor=#f5f5f5;strokeColor=#999999;" value="[number] Max prep time&#xa;(name=&quot;max-prep-time&quot;, min=5, max=120)" vertex="1">
+          <mxGeometry height="60" width="250" x="610" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="12" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontSize=10;fillColor=#f5f5f5;strokeColor=#666666;dashed=1;" value="FIELDSET: [checkbox] Meal Type (name=&quot;meal-type&quot;)&#xa;☐ Breakfast  ☐ Lunch  ☐ Dinner  ☐ Snack" vertex="1">
+          <mxGeometry height="60" width="450" x="40" y="278" as="geometry" />
+        </mxCell>
+        <mxCell id="13" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontSize=10;fillColor=#f5f5f5;strokeColor=#666666;dashed=1;" value="FIELDSET: [radio] Sort By (name=&quot;sort&quot;)&#xa;○ Newest  ○ Fastest  ○ Easiest" vertex="1">
+          <mxGeometry height="60" width="350" x="510" y="278" as="geometry" />
+        </mxCell>
+        <mxCell id="14" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontSize=10;fillColor=#f5f5f5;strokeColor=#999999;" value="[range] Max calories&#xa;(name=&quot;max-calories&quot;, min=100, max=1000)&#xa;◄━━━━━━━━━●━━━━► 600 kcal" vertex="1">
+          <mxGeometry height="70" width="350" x="40" y="356" as="geometry" />
+        </mxCell>
+        <mxCell id="15" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontSize=10;fillColor=#f5f5f5;strokeColor=#999999;" value="[email] Email me matching recipes&#xa;(name=&quot;notify-email&quot;)" vertex="1">
+          <mxGeometry height="70" width="280" x="410" y="356" as="geometry" />
+        </mxCell>
+        <mxCell id="16" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontSize=11;fontStyle=1;fillColor=#f8cecc;strokeColor=#b85450;" value="[submit] Search Recipes" vertex="1">
+          <mxGeometry height="44" width="220" x="890" y="370" as="geometry" />
+        </mxCell>
+        <mxCell id="17" parent="1" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;align=left;spacingTop=4;spacingLeft=8;fontSize=10;fontStyle=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="[Section: Recipe Grid — id=&quot;recipe-grid&quot;]" vertex="1">
+          <mxGeometry height="290" width="1129" x="20" y="470" as="geometry" />
+        </mxCell>
+        <mxCell id="18" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontSize=10;fillColor=#f5f5f5;strokeColor=#999999;verticalAlign=top;" value="[img] alt=&quot;Spaghetti Carbonara&quot;&#xa;[h3] Spaghetti Carbonara&#xa;[span] Italian | Easy&#xa;[span] Active: 20min / Total: 25min" vertex="1">
+          <mxGeometry height="120" width="328" x="40" y="500" as="geometry" />
+        </mxCell>
+        <mxCell id="19" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontSize=10;fillColor=#f5f5f5;strokeColor=#999999;verticalAlign=top;" value="[img] alt=&quot;Thai Green Curry&quot;&#xa;[h3] Thai Green Curry&#xa;[span] Thai | Medium&#xa;[span] Active: 15min / Total: 35min" vertex="1">
+          <mxGeometry height="120" width="328" x="380" y="500" as="geometry" />
+        </mxCell>
+        <mxCell id="20" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontSize=10;fillColor=#f5f5f5;strokeColor=#999999;verticalAlign=top;" value="[img] alt=&quot;Avocado Toast&quot;&#xa;[h3] Avocado Toast&#xa;[span] American | Easy&#xa;[span] Active: 5min / Total: 5min" vertex="1">
+          <mxGeometry height="120" width="328" x="720" y="500" as="geometry" />
+        </mxCell>
+        <mxCell id="21" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontSize=10;fillColor=#f5f5f5;strokeColor=#999999;verticalAlign=top;" value="[img] alt=&quot;Chicken Stir-Fry&quot;&#xa;[h3] Chicken Stir-Fry&#xa;[span] Chinese | Easy&#xa;[span] Active: 10min / Total: 20min" vertex="1">
+          <mxGeometry height="115" width="328" x="40" y="630" as="geometry" />
+        </mxCell>
+        <mxCell id="22" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontSize=10;fillColor=#f5f5f5;strokeColor=#999999;verticalAlign=top;" value="[img] alt=&quot;Mushroom Risotto&quot;&#xa;[h3] Mushroom Risotto&#xa;[span] Italian | Medium&#xa;[span] Active: 30min / Total: 40min" vertex="1">
+          <mxGeometry height="115" width="328" x="380" y="630" as="geometry" />
+        </mxCell>
+        <mxCell id="23" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontSize=10;fillColor=#f5f5f5;strokeColor=#999999;verticalAlign=top;" value="[img] alt=&quot;Greek Salad&quot;&#xa;[h3] Greek Salad&#xa;[span] Mediterranean | Easy&#xa;[span] Active: 10min / Total: 10min" vertex="1">
+          <mxGeometry height="115" width="328" x="720" y="630" as="geometry" />
+        </mxCell>
+        <mxCell id="24" parent="1" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;align=left;spacingTop=4;spacingLeft=8;fontSize=10;fontStyle=1;fillColor=#e1d5e7;strokeColor=#9673a6;" value="[Section: Media Library — id=&quot;media-library&quot;]" vertex="1">
+          <mxGeometry height="210" width="1129" x="20" y="780" as="geometry" />
+        </mxCell>
+        <mxCell id="25" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontSize=10;fontStyle=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="[th] Preview" vertex="1">
+          <mxGeometry height="35" width="130" x="40" y="810" as="geometry" />
+        </mxCell>
+        <mxCell id="26" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontSize=10;fontStyle=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="[th] Title" vertex="1">
+          <mxGeometry height="35" width="200" x="178" y="810" as="geometry" />
+        </mxCell>
+        <mxCell id="27" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontSize=10;fontStyle=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="[th] Category" vertex="1">
+          <mxGeometry height="35" width="150" x="386" y="810" as="geometry" />
+        </mxCell>
+        <mxCell id="28" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontSize=10;fontStyle=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="[th] Type" vertex="1">
+          <mxGeometry height="35" width="100" x="544" y="810" as="geometry" />
+        </mxCell>
+        <mxCell id="29" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontSize=10;fontStyle=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="[th] Description" vertex="1">
+          <mxGeometry height="35" width="480" x="652" y="810" as="geometry" />
+        </mxCell>
+        <mxCell id="30" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontSize=10;fillColor=#f5f5f5;strokeColor=#cccccc;" value="[img]" vertex="1">
+          <mxGeometry height="30" width="130" x="40" y="853" as="geometry" />
+        </mxCell>
+        <mxCell id="31" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontSize=10;fillColor=#f5f5f5;strokeColor=#cccccc;" value="Spaghetti Carbonara hero" vertex="1">
+          <mxGeometry height="30" width="200" x="178" y="853" as="geometry" />
+        </mxCell>
+        <mxCell id="32" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontSize=10;fillColor=#f5f5f5;strokeColor=#cccccc;" value="Main Course" vertex="1">
+          <mxGeometry height="30" width="150" x="386" y="853" as="geometry" />
+        </mxCell>
+        <mxCell id="33" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontSize=10;fillColor=#f5f5f5;strokeColor=#cccccc;" value="Image" vertex="1">
+          <mxGeometry height="30" width="100" x="544" y="853" as="geometry" />
+        </mxCell>
+        <mxCell id="34" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontSize=10;fillColor=#f5f5f5;strokeColor=#cccccc;" value="Hero photo of finished dish" vertex="1">
+          <mxGeometry height="30" width="480" x="652" y="853" as="geometry" />
+        </mxCell>
+        <mxCell id="35" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontSize=10;fillColor=#f5f5f5;strokeColor=#cccccc;" value="[a] link" vertex="1">
+          <mxGeometry height="30" width="130" x="40" y="891" as="geometry" />
+        </mxCell>
+        <mxCell id="36" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontSize=10;fillColor=#f5f5f5;strokeColor=#cccccc;" value="Thai Green Curry step-by-step" vertex="1">
+          <mxGeometry height="30" width="200" x="178" y="891" as="geometry" />
+        </mxCell>
+        <mxCell id="37" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontSize=10;fillColor=#f5f5f5;strokeColor=#cccccc;" value="Main Course" vertex="1">
+          <mxGeometry height="30" width="150" x="386" y="891" as="geometry" />
+        </mxCell>
+        <mxCell id="38" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontSize=10;fillColor=#f5f5f5;strokeColor=#cccccc;" value="Video" vertex="1">
+          <mxGeometry height="30" width="100" x="544" y="891" as="geometry" />
+        </mxCell>
+        <mxCell id="39" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontSize=10;fillColor=#f5f5f5;strokeColor=#cccccc;" value="Step-by-step cooking video" vertex="1">
+          <mxGeometry height="30" width="480" x="652" y="891" as="geometry" />
+        </mxCell>
+        <mxCell id="40" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontSize=10;fillColor=#f5f5f5;strokeColor=#cccccc;" value="[a] link" vertex="1">
+          <mxGeometry height="30" width="130" x="40" y="929" as="geometry" />
+        </mxCell>
+        <mxCell id="41" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontSize=10;fillColor=#f5f5f5;strokeColor=#cccccc;" value="Knife skills technique" vertex="1">
+          <mxGeometry height="30" width="200" x="178" y="929" as="geometry" />
+        </mxCell>
+        <mxCell id="42" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontSize=10;fillColor=#f5f5f5;strokeColor=#cccccc;" value="Technique" vertex="1">
+          <mxGeometry height="30" width="150" x="386" y="929" as="geometry" />
+        </mxCell>
+        <mxCell id="43" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontSize=10;fillColor=#f5f5f5;strokeColor=#cccccc;" value="Video" vertex="1">
+          <mxGeometry height="30" width="100" x="544" y="929" as="geometry" />
+        </mxCell>
+        <mxCell id="44" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontSize=10;fillColor=#f5f5f5;strokeColor=#cccccc;" value="Professional chopping technique demo" vertex="1">
+          <mxGeometry height="30" width="480" x="652" y="929" as="geometry" />
+        </mxCell>
+        <mxCell id="45" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontSize=10;fillColor=#f5f5f5;strokeColor=#cccccc;" value="[a] link" vertex="1">
+          <mxGeometry height="16" width="130" x="40" y="967" as="geometry" />
+        </mxCell>
+        <mxCell id="46" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontSize=10;fillColor=#f5f5f5;strokeColor=#cccccc;" value="Pantry essentials guide" vertex="1">
+          <mxGeometry height="16" width="200" x="178" y="967" as="geometry" />
+        </mxCell>
+        <mxCell id="47" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontSize=10;fillColor=#f5f5f5;strokeColor=#cccccc;" value="Tips" vertex="1">
+          <mxGeometry height="16" width="150" x="386" y="967" as="geometry" />
+        </mxCell>
+        <mxCell id="48" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontSize=10;fillColor=#f5f5f5;strokeColor=#cccccc;" value="Audio" vertex="1">
+          <mxGeometry height="16" width="100" x="544" y="967" as="geometry" />
+        </mxCell>
+        <mxCell id="49" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontSize=10;fillColor=#f5f5f5;strokeColor=#cccccc;" value="Audio guide to stocking your pantry" vertex="1">
+          <mxGeometry height="16" width="480" x="652" y="967" as="geometry" />
+        </mxCell>
+        <mxCell id="50" parent="1" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=middle;align=center;fontSize=10;fontStyle=1;fillColor=#f5f5f5;strokeColor=#999999;" value="[Section: Footer] — © Recipy  |  [nav] Home  |  [nav] Recipes  |  [nav] About" vertex="1">
+          <mxGeometry height="50" width="1129" x="20" y="1000" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="AboutWireframe" name="About">
+    <mxGraphModel dx="1144" dy="840" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;align=left;spacingTop=4;spacingLeft=8;fontSize=10;fontStyle=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="[Section: Navigation Bar]" vertex="1">
+          <mxGeometry height="70" width="1129" x="20" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontSize=10;fillColor=#f5f5f5;strokeColor=#999999;" value="[nav] Recipy logo" vertex="1">
+          <mxGeometry height="34" width="130" x="32" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontSize=10;fillColor=#f5f5f5;strokeColor=#999999;" value="[nav] Home → index.html" vertex="1">
+          <mxGeometry height="34" width="130" x="727" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="5" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontSize=10;fillColor=#f5f5f5;strokeColor=#999999;" value="[nav] Recipes → recipes.html" vertex="1">
+          <mxGeometry height="34" width="130" x="867" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="6" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontSize=10;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;" value="[nav] About → about.html (ACTIVE)" vertex="1">
+          <mxGeometry height="34" width="130" x="1007" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="7" parent="1" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;align=left;spacingTop=4;spacingLeft=8;fontSize=10;fontStyle=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="[Section: Mission — id=&quot;mission&quot;]" vertex="1">
+          <mxGeometry height="170" width="760" x="20" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="8" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontSize=14;fontStyle=1;fillColor=#fffde7;strokeColor=#cccc00;" value="[h1] About Recipy" vertex="1">
+          <mxGeometry height="40" width="720" x="40" y="125" as="geometry" />
+        </mxCell>
+        <mxCell id="9" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontSize=10;fillColor=#fffde7;strokeColor=#cccc00;" value="[p] Recipy helps busy people who love good food find recipes that fit their schedule. Filter by active prep time — the time you actually spend in the kitchen — not total time." vertex="1">
+          <mxGeometry height="45" width="720" x="40" y="172" as="geometry" />
+        </mxCell>
+        <mxCell id="10" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontSize=10;fillColor=#fffde7;strokeColor=#cccc00;" value="[p] Every recipe shows active prep time, total time (including waiting/marinating), difficulty level, and key nutrition info so you can make the right choice in seconds." vertex="1">
+          <mxGeometry height="35" width="720" x="40" y="224" as="geometry" />
+        </mxCell>
+        <mxCell id="11" parent="1" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;align=left;spacingTop=4;spacingLeft=8;fontSize=10;fontStyle=1;fillColor=#e1d5e7;strokeColor=#9673a6;" value="[aside: Key Features — id=&quot;key-features&quot;]" vertex="1">
+          <mxGeometry height="170" width="349" x="800" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="12" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontSize=10;fillColor=#f5f5f5;strokeColor=#999999;" value="[ul] Filter by active prep time" vertex="1">
+          <mxGeometry height="28" width="319" x="815" y="130" as="geometry" />
+        </mxCell>
+        <mxCell id="13" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontSize=10;fillColor=#f5f5f5;strokeColor=#999999;" value="[ul] Dietary preference matching" vertex="1">
+          <mxGeometry height="28" width="319" x="815" y="164" as="geometry" />
+        </mxCell>
+        <mxCell id="14" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontSize=10;fillColor=#f5f5f5;strokeColor=#999999;" value="[ul] Nutrition info at a glance" vertex="1">
+          <mxGeometry height="28" width="319" x="815" y="198" as="geometry" />
+        </mxCell>
+        <mxCell id="15" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontSize=10;fillColor=#f5f5f5;strokeColor=#999999;" value="[ul] Step-by-step instructions" vertex="1">
+          <mxGeometry height="28" width="319" x="815" y="232" as="geometry" />
+        </mxCell>
+        <mxCell id="16" parent="1" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;align=left;spacingTop=4;spacingLeft=8;fontSize=10;fontStyle=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="[Section: FAQ — id=&quot;faq&quot;]" vertex="1">
+          <mxGeometry height="170" width="1129" x="20" y="290" as="geometry" />
+        </mxCell>
+        <mxCell id="17" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontSize=11;fillColor=#f5f5f5;strokeColor=#666666;" value="[details] ▶ How do I find quick recipes?" vertex="1">
+          <mxGeometry height="38" width="1089" x="40" y="320" as="geometry" />
+        </mxCell>
+        <mxCell id="18" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontSize=11;fillColor=#f5f5f5;strokeColor=#666666;" value="[details] ▶ Can I filter by dietary preference?" vertex="1">
+          <mxGeometry height="38" width="1089" x="40" y="366" as="geometry" />
+        </mxCell>
+        <mxCell id="19" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontSize=11;fillColor=#f5f5f5;strokeColor=#666666;" value="[details] ▶ What does &quot;active prep time&quot; mean?" vertex="1">
+          <mxGeometry height="38" width="1089" x="40" y="412" as="geometry" />
+        </mxCell>
+        <mxCell id="20" parent="1" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;align=left;spacingTop=4;spacingLeft=8;fontSize=10;fontStyle=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="[Section: Contact — id=&quot;contact&quot;]" vertex="1">
+          <mxGeometry height="250" width="1129" x="20" y="480" as="geometry" />
+        </mxCell>
+        <mxCell id="21" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontSize=10;fillColor=#f5f5f5;strokeColor=#999999;" value="[text] Your name (name=&quot;name&quot;) *required" vertex="1">
+          <mxGeometry height="50" width="520" x="40" y="515" as="geometry" />
+        </mxCell>
+        <mxCell id="22" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontSize=10;fillColor=#f5f5f5;strokeColor=#999999;" value="[email] Email address (name=&quot;email&quot;) *required" vertex="1">
+          <mxGeometry height="50" width="520" x="580" y="515" as="geometry" />
+        </mxCell>
+        <mxCell id="23" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontSize=10;fillColor=#f5f5f5;strokeColor=#999999;" value="[text] Subject (name=&quot;subject&quot;)" vertex="1">
+          <mxGeometry height="50" width="1060" x="40" y="575" as="geometry" />
+        </mxCell>
+        <mxCell id="24" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontSize=10;fillColor=#f5f5f5;strokeColor=#999999;" value="[textarea] Your message (name=&quot;message&quot;) *required" vertex="1">
+          <mxGeometry height="70" width="1060" x="40" y="635" as="geometry" />
+        </mxCell>
+        <mxCell id="25" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontSize=11;fontStyle=1;fillColor=#f8cecc;strokeColor=#b85450;" value="[submit] Send Message" vertex="1">
+          <mxGeometry height="40" width="220" x="880" y="715" as="geometry" />
+        </mxCell>
+        <mxCell id="26" parent="1" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=middle;align=center;fontSize=10;fontStyle=1;fillColor=#f5f5f5;strokeColor=#999999;" value="[Section: Footer] — © Recipy  |  [nav] Home  |  [nav] Recipes  |  [nav] About" vertex="1">
+          <mxGeometry height="50" width="1129" x="20" y="750" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
