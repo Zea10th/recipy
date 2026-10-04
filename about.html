@@ -4,20 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About — Recipy</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+          rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+          crossorigin="anonymous">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
     <!-- Navigation -->
     <header>
-        <nav id="main-navigation" aria-label="Main navigation">
+        <nav id="main-navigation" class="navbar navbar-expand-md navbar-dark" aria-label="Main navigation">
             <div class="container">
-                <a class="nav-brand" href="index.html">Recipy</a>
-                <ul>
-                    <li><a class="nav-link" href="index.html">Home</a></li>
-                    <li><a class="nav-link" href="recipes.html">Recipes</a></li>
-                    <li><a class="nav-link nav-link--active" href="about.html" aria-current="page">About</a></li>
-                </ul>
+                <a class="navbar-brand nav-brand" href="index.html">Recipy</a>
+                <button class="navbar-toggler" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#navbarMain"
+                        aria-controls="navbarMain" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarMain">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="recipes.html">Recipes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link nav-link--active" href="about.html" aria-current="page">About</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </nav>
     </header>
@@ -28,7 +45,7 @@
         <section id="mission" class="section">
             <div class="container">
                 <h1>About Recipy</h1>
-                <div class="mission-content">
+                <div class="mission-content col-lg-8 mx-auto">
                     <h2>Our Mission</h2>
                     <p>Recipy was built for people who love food but live busy lives. We believe that a great home-cooked meal should never be out of reach — even on a packed Tuesday evening.</p>
                     <p>Unlike other recipe sites that list total cooking time, Recipy always shows <strong>active prep time</strong>: the minutes you actually spend at the stove or chopping board. A slow-cooker meal might take eight hours, but if you only spend fifteen minutes preparing it, that's what matters.</p>
@@ -38,10 +55,10 @@
         </section>
 
         <!-- Key features -->
-        <aside id="key-features" class="section">
+        <aside id="key-features" class="section scroll-reveal" data-scroll-reveal>
             <div class="container">
                 <h2 class="section-title">Key Features</h2>
-                <ul>
+                <ul class="col-lg-6 mx-auto">
                     <li>Filter by active prep time — not total cooking time</li>
                     <li>Dietary preference matching — vegetarian, vegan, gluten-free</li>
                     <li>Nutrition at a glance — calories, protein, and key macros</li>
@@ -76,28 +93,94 @@
             </div>
         </section>
 
+        <!-- Cooking Tips Accordion -->
+        <section id="cooking-tips" class="section">
+            <div class="container">
+                <h2 class="section-title">Cooking Tips</h2>
+                <div class="accordion col-lg-8 mx-auto" id="cookingTipsAccordion">
+
+                    <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#cookingTip1"
+                                    aria-expanded="false" aria-controls="cookingTip1">
+                                Season at Every Stage
+                            </button>
+                        </h3>
+                        <div id="cookingTip1" class="accordion-collapse collapse"
+                             data-bs-parent="#cookingTipsAccordion">
+                            <div class="accordion-body">
+                                Great flavour is built layer by layer. Salt your pasta water generously, season proteins before cooking, taste your sauces mid-way through, and adjust again at the end. Each stage of seasoning serves a different purpose and creates depth that a single final pinch cannot replicate.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#cookingTip2"
+                                    aria-expanded="false" aria-controls="cookingTip2">
+                                Rest Your Meat After Cooking
+                            </button>
+                        </h3>
+                        <div id="cookingTip2" class="accordion-collapse collapse"
+                             data-bs-parent="#cookingTipsAccordion">
+                            <div class="accordion-body">
+                                Resting allows muscle fibres to relax and reabsorb juices that were pushed to the centre during cooking. A steak needs at least 5 minutes; a whole roast chicken benefits from 15–20 minutes. Cover loosely with foil to retain warmth without steaming the crust.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#cookingTip3"
+                                    aria-expanded="false" aria-controls="cookingTip3">
+                                Read the Entire Recipe Before You Start
+                            </button>
+                        </h3>
+                        <div id="cookingTip3" class="accordion-collapse collapse"
+                             data-bs-parent="#cookingTipsAccordion">
+                            <div class="accordion-body">
+                                Professional cooks practise mise en place — everything in its place before the heat goes on. Reading the recipe end-to-end reveals what needs pre-soaking, what must be at room temperature, and which steps can run in parallel. Two minutes of preparation prevents ten minutes of panic.
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
         <!-- Contact form -->
-        <section id="contact" class="section">
+        <section id="contact" class="section scroll-reveal" data-scroll-reveal>
             <div class="container">
                 <h2 class="section-title">Contact Us</h2>
-                <form id="contact-form" action="#">
-                    <div class="contact-form__field">
-                        <label for="contact-name">Your Name</label>
-                        <input type="text" id="contact-name" name="name" placeholder="Jane Smith" required>
+                <form id="contact-form" action="#" novalidate class="col-lg-8 mx-auto">
+                    <div class="contact-form__field mb-3">
+                        <label for="contact-name" class="form-label">Your Name</label>
+                        <input type="text" id="contact-name" name="name"
+                               class="form-control"
+                               placeholder="Jane Smith" required>
                     </div>
-                    <div class="contact-form__field">
-                        <label for="contact-email">Email Address</label>
-                        <input type="email" id="contact-email" name="email" placeholder="jane@example.com" required>
+                    <div class="contact-form__field mb-3">
+                        <label for="contact-email" class="form-label">Email Address</label>
+                        <input type="email" id="contact-email" name="email"
+                               class="form-control"
+                               placeholder="jane@example.com" required>
                     </div>
-                    <div class="contact-form__field">
-                        <label for="contact-subject">Subject</label>
-                        <input type="text" id="contact-subject" name="subject" placeholder="e.g. Recipe suggestion">
+                    <div class="contact-form__field mb-3">
+                        <label for="contact-subject" class="form-label">Subject</label>
+                        <input type="text" id="contact-subject" name="subject"
+                               class="form-control"
+                               placeholder="e.g. Recipe suggestion">
                     </div>
-                    <div class="contact-form__field">
-                        <label for="contact-message">Message</label>
-                        <textarea id="contact-message" name="message" placeholder="Tell us what's on your mind…" required></textarea>
+                    <div class="contact-form__field mb-3">
+                        <label for="contact-message" class="form-label">Message</label>
+                        <textarea id="contact-message" name="message"
+                                  class="form-control"
+                                  placeholder="Tell us what's on your mind…" required></textarea>
                     </div>
-                    <button type="submit" class="btn-primary">Send Message</button>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
                 </form>
             </div>
         </section>
@@ -116,5 +199,11 @@
         </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+            crossorigin="anonymous">
+    </script>
+    <script src="js/contact.js" defer></script>
+    <script src="js/app.js" defer></script>
 </body>
 </html>

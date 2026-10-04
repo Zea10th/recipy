@@ -4,20 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recipy — Find Your Perfect Recipe</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+          rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+          crossorigin="anonymous">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
     <!-- Navigation -->
     <header>
-        <nav id="main-navigation" aria-label="Main navigation">
+        <nav id="main-navigation" class="navbar navbar-expand-md navbar-dark" aria-label="Main navigation">
             <div class="container">
-                <a class="nav-brand" href="index.html">Recipy</a>
-                <ul>
-                    <li><a class="nav-link nav-link--active" href="index.html" aria-current="page">Home</a></li>
-                    <li><a class="nav-link" href="recipes.html">Recipes</a></li>
-                    <li><a class="nav-link" href="about.html">About</a></li>
-                </ul>
+                <a class="navbar-brand nav-brand" href="index.html">Recipy</a>
+                <button class="navbar-toggler" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#navbarMain"
+                        aria-controls="navbarMain" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarMain">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link nav-link--active" href="index.html" aria-current="page">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="recipes.html">Recipes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </nav>
     </header>
@@ -37,16 +54,16 @@
         <section id="features" class="section">
             <div class="container">
                 <h2 class="section-title">Why Recipy?</h2>
-                <ul class="features-list">
-                    <li>
+                <ul class="features-list row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4">
+                    <li class="col scroll-reveal" data-scroll-reveal>
                         <span class="feature-icon" aria-hidden="true">⏱️</span>
                         Filter by active prep time — not total cooking time
                     </li>
-                    <li>
+                    <li class="col scroll-reveal" data-scroll-reveal>
                         <span class="feature-icon" aria-hidden="true">🥗</span>
                         Match your dietary needs — vegetarian, vegan, gluten-free
                     </li>
-                    <li>
+                    <li class="col scroll-reveal" data-scroll-reveal>
                         <span class="feature-icon" aria-hidden="true">📊</span>
                         See full nutrition info at a glance
                     </li>
@@ -58,16 +75,16 @@
         <section id="how-it-works" class="section">
             <div class="container">
                 <h2 class="section-title">How It Works</h2>
-                <ol class="steps-list">
-                    <li>
+                <ol class="steps-list row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4">
+                    <li class="col scroll-reveal" data-scroll-reveal>
                         <strong>Set your preferences</strong>
                         <p>Choose your dietary needs, available time, and meal type.</p>
                     </li>
-                    <li>
+                    <li class="col scroll-reveal" data-scroll-reveal>
                         <strong>Browse matching recipes</strong>
                         <p>Explore recipes filtered to your exact criteria.</p>
                     </li>
-                    <li>
+                    <li class="col scroll-reveal" data-scroll-reveal>
                         <strong>Cook and enjoy</strong>
                         <p>Follow step-by-step instructions and savour the result.</p>
                     </li>
@@ -75,101 +92,123 @@
             </div>
         </section>
 
-        <!-- Featured Recipes Preview -->
+        <!-- Featured Recipes Carousel -->
         <section id="featured-recipes" class="section">
             <div class="container">
                 <h2 class="section-title">Featured Recipes</h2>
-                <div class="recipe-grid">
+                <div id="featuredCarousel" class="carousel slide"
+                     data-bs-ride="carousel" data-bs-interval="5000"
+                     aria-label="Featured recipes carousel">
 
-                    <!-- Recipe 1: Spaghetti Carbonara -->
-                    <article class="recipe-card" data-recipe-id="1">
-                        <div class="recipe-card__image-wrap">
-                            <img
-                                class="recipe-card__image"
-                                src="https://placehold.co/600x400/e76f51/ffffff?text=Spaghetti+Carbonara"
-                                alt="A bowl of spaghetti carbonara with crispy guanciale and a dusting of black pepper">
-                            <div class="recipe-card__overlay" aria-hidden="true">
-                                <span>Spaghetti Carbonara</span>
-                            </div>
-                        </div>
-                        <div class="recipe-card__body">
-                            <span class="recipe-card__category">Italian</span>
-                            <h3 class="recipe-card__title">Spaghetti Carbonara</h3>
-                            <ul class="recipe-card__tags">
-                                <li>Quick</li>
-                                <li>Pasta</li>
-                            </ul>
-                            <div class="recipe-card__meta">
-                                <span>⏱ 20 min active</span>
-                                <span>🕒 25 min total</span>
-                                <span>Easy</span>
-                            </div>
-                            <p class="recipe-card__description">Classic Roman pasta made with eggs, Pecorino Romano, guanciale, and black pepper — no cream required.</p>
-                        </div>
-                    </article>
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#featuredCarousel"
+                                data-bs-slide-to="0" class="active" aria-current="true"
+                                aria-label="Spaghetti Carbonara"></button>
+                        <button type="button" data-bs-target="#featuredCarousel"
+                                data-bs-slide-to="1"
+                                aria-label="Thai Green Curry"></button>
+                        <button type="button" data-bs-target="#featuredCarousel"
+                                data-bs-slide-to="2"
+                                aria-label="Avocado Toast"></button>
+                    </div>
 
-                    <!-- Recipe 2: Thai Green Curry -->
-                    <article class="recipe-card" data-recipe-id="2">
-                        <div class="recipe-card__image-wrap">
-                            <img
-                                class="recipe-card__image"
-                                src="https://placehold.co/600x400/2a9d8f/ffffff?text=Thai+Green+Curry"
-                                alt="A bowl of fragrant Thai green curry with coconut milk and fresh basil">
-                            <div class="recipe-card__overlay" aria-hidden="true">
-                                <span>Thai Green Curry</span>
+                    <div class="carousel-inner rounded">
+                        <div class="carousel-item active">
+                            <img src="https://placehold.co/1200x500/e76f51/ffffff?text=Spaghetti+Carbonara"
+                                 class="d-block w-100"
+                                 alt="A bowl of spaghetti carbonara with crispy guanciale and a dusting of black pepper"
+                                 style="height: 400px; object-fit: cover;">
+                            <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-3">
+                                <span class="badge mb-2">Italian</span>
+                                <h3 class="h5 text-white">Spaghetti Carbonara</h3>
+                                <p class="text-white-50 small">20 min active · Easy</p>
+                                <button class="btn btn-primary btn-sm"
+                                        data-recipe-id="1" data-action="open-modal">
+                                    View Details
+                                </button>
                             </div>
                         </div>
-                        <div class="recipe-card__body">
-                            <span class="recipe-card__category">Thai</span>
-                            <h3 class="recipe-card__title">Thai Green Curry</h3>
-                            <ul class="recipe-card__tags">
-                                <li>Vegetarian</li>
-                                <li>Spicy</li>
-                            </ul>
-                            <div class="recipe-card__meta">
-                                <span>⏱ 15 min active</span>
-                                <span>🕒 35 min total</span>
-                                <span>Medium</span>
-                            </div>
-                            <p class="recipe-card__description">Aromatic green curry with coconut milk, Thai basil, and your choice of vegetables or chicken.</p>
-                        </div>
-                    </article>
 
-                    <!-- Recipe 3: Avocado Toast -->
-                    <article class="recipe-card" data-recipe-id="3">
-                        <div class="recipe-card__image-wrap">
-                            <img
-                                class="recipe-card__image"
-                                src="https://placehold.co/600x400/264653/ffffff?text=Avocado+Toast"
-                                alt="Thick-cut sourdough toast topped with smashed avocado and chilli flakes">
-                            <div class="recipe-card__overlay" aria-hidden="true">
-                                <span>Avocado Toast</span>
+                        <div class="carousel-item">
+                            <img src="https://placehold.co/1200x500/2a9d8f/ffffff?text=Thai+Green+Curry"
+                                 class="d-block w-100"
+                                 alt="A bowl of fragrant Thai green curry with coconut milk and fresh basil"
+                                 style="height: 400px; object-fit: cover;">
+                            <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-3">
+                                <span class="badge mb-2">Thai</span>
+                                <h3 class="h5 text-white">Thai Green Curry</h3>
+                                <p class="text-white-50 small">15 min active · Medium</p>
+                                <button class="btn btn-primary btn-sm"
+                                        data-recipe-id="2" data-action="open-modal">
+                                    View Details
+                                </button>
                             </div>
                         </div>
-                        <div class="recipe-card__body">
-                            <span class="recipe-card__category">American</span>
-                            <h3 class="recipe-card__title">Avocado Toast</h3>
-                            <ul class="recipe-card__tags">
-                                <li>Vegan</li>
-                                <li>Breakfast</li>
-                            </ul>
-                            <div class="recipe-card__meta">
-                                <span>⏱ 5 min active</span>
-                                <span>🕒 5 min total</span>
-                                <span>Easy</span>
+
+                        <div class="carousel-item">
+                            <img src="https://placehold.co/1200x500/264653/ffffff?text=Avocado+Toast"
+                                 class="d-block w-100"
+                                 alt="Thick-cut sourdough toast topped with smashed avocado and chilli flakes"
+                                 style="height: 400px; object-fit: cover;">
+                            <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-3">
+                                <span class="badge mb-2">American</span>
+                                <h3 class="h5 text-white">Avocado Toast</h3>
+                                <p class="text-white-50 small">5 min active · Easy</p>
+                                <button class="btn btn-primary btn-sm"
+                                        data-recipe-id="3" data-action="open-modal">
+                                    View Details
+                                </button>
                             </div>
-                            <p class="recipe-card__description">Creamy smashed avocado on toasted sourdough with lemon, chilli flakes, and sea salt.</p>
                         </div>
-                    </article>
+                    </div>
+
+                    <button class="carousel-control-prev" type="button"
+                            data-bs-target="#featuredCarousel" data-bs-slide="prev"
+                            aria-label="Previous slide">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    </button>
+                    <button class="carousel-control-next" type="button"
+                            data-bs-target="#featuredCarousel" data-bs-slide="next"
+                            aria-label="Next slide">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    </button>
 
                 </div>
-                <div style="text-align: center; margin-top: 2rem;">
+
+                <div class="text-center mt-4">
                     <a class="btn-secondary" href="recipes.html">See All Recipes</a>
                 </div>
             </div>
         </section>
 
     </main>
+
+    <!-- Recipe Detail Modal -->
+    <div class="modal fade" id="recipeDetailModal" tabindex="-1"
+         aria-labelledby="recipeModalTitle" aria-modal="true" role="dialog">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title h5" id="recipeModalTitle">
+                        Recipe details
+                    </h2>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img id="recipeModalImage" class="img-fluid w-100 mb-3 rounded" src="" alt="">
+                    <div class="mb-2">
+                        <span id="recipeModalCategory" class="badge me-2"></span>
+                        <span id="recipeModalTags"></span>
+                    </div>
+                    <div id="recipeModalMeta" class="d-flex flex-wrap gap-3 text-muted small mb-3"></div>
+                    <p id="recipeModalDescription" class="mb-3"></p>
+                    <h3 class="h6 fw-bold">Ingredients</h3>
+                    <ul id="recipeModalIngredients" class="list-unstyled"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer>
@@ -183,5 +222,11 @@
         </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+            crossorigin="anonymous">
+    </script>
+    <script src="js/recipes.js" defer></script>
+    <script src="js/app.js" defer></script>
 </body>
 </html>
