@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipes — Recipy</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <header>
+        <nav id="main-navigation" aria-label="Main navigation">
+            <div class="container">
+                <a class="nav-brand" href="index.html">Recipy</a>
+                <ul>
+                    <li><a class="nav-link" href="index.html">Home</a></li>
+                    <li><a class="nav-link nav-link--active" href="recipes.html" aria-current="page">Recipes</a></li>
+                    <li><a class="nav-link" href="about.html">About</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="section">
+            <div class="container">
+                <h1>Find Your Perfect Recipe</h1>
+
+                <!-- Recipe filter form -->
+                <section id="recipe-search-form" aria-label="Recipe filters">
+                    <h2>Filter Recipes</h2>
+                    <form id="recipe-filter-form" action="#" method="get">
+                        <div class="filter-form-grid">
+
+                            <!-- Input type: text -->
+                            <div class="filter-group">
+                                <label for="keyword">Keyword</label>
+                                <input type="text" id="keyword" name="keyword" placeholder="e.g. pasta, curry…">
+                            </div>
+
+                            <!-- Input type: select (not a native input type but a distinct form control) -->
+                            <div class="filter-group">
+                                <label for="dietary">Dietary Preference</label>
+                                <select id="dietary" name="dietary">
+                                    <option value="">Any</option>
+                                    <option value="vegetarian">Vegetarian</option>
+                                    <option value="vegan">Vegan</option>
+                                    <option value="gluten-free">Gluten-Free</option>
+                                </select>
+                            </div>
+
+                            <!-- Input type: number -->
+                            <div class="filter-group">
+                                <label for="max-prep-time">Max Active Prep Time (min)</label>
+                                <input type="number" id="max-prep-time" name="max-prep-time" min="5" max="120" placeholder="e.g. 30">
+                            </div>
+
+                            <!-- Input type: checkbox (multi-select group) -->
+                            <div class="filter-group">
+                                <fieldset>
+                                    <legend>Meal Type</legend>
+                                    <div class="checkbox-group">
+                                        <label>
+                                            <input type="checkbox" name="meal-type" value="breakfast"> Breakfast
+                                        </label>
+                                        <label>
+                                            <input type="checkbox" name="meal-type" value="lunch"> Lunch
+                                        </label>
+                                        <label>
+                                            <input type="checkbox" name="meal-type" value="dinner"> Dinner
+                                        </label>
+                                        <label>
+                                            <input type="checkbox" name="meal-type" value="snack"> Snack
+                                        </label>
+                                    </div>
+                                </fieldset>
+                            </div>
+
+                            <!-- Input type: radio (single-select group) -->
+                            <div class="filter-group">
+                                <fieldset>
+                                    <legend>Sort By</legend>
+                                    <div class="radio-group">
+                                        <label>
+                                            <input type="radio" name="sort" value="newest" checked> Newest
+                                        </label>
+                                        <label>
+                                            <input type="radio" name="sort" value="fastest"> Fastest
+                                        </label>
+                                        <label>
+                                            <input type="radio" name="sort" value="easiest"> Easiest
+                                        </label>
+                                    </div>
+                                </fieldset>
+                            </div>
+
+                            <!-- Input type: range -->
+                            <div class="filter-group">
+                                <label for="max-calories">Max Calories: <span id="calorie-display">600</span> kcal</label>
+                                <input type="range" id="max-calories" name="max-calories" min="100" max="1000" value="600">
+                                <span class="range-value">Drag to set maximum calorie count</span>
+                            </div>
+
+                            <!-- Input type: email -->
+                            <div class="filter-group">
+                                <label for="notify-email">Notify Me of New Recipes (optional)</label>
+                                <input type="email" id="notify-email" name="notify-email" placeholder="your@email.com">
+                            </div>
+
+                            <!-- Submit button -->
+                            <div class="filter-actions">
+                                <button type="submit" class="btn-primary">Search Recipes</button>
+                            </div>
+
+                        </div>
+                    </form>
+                </section>
+
+                <!-- Recipe card grid -->
+                <section id="recipe-grid" class="section">
+                    <h2>All Recipes</h2>
+                    <div class="recipe-grid">
+
+                        <!-- Recipe 1: Spaghetti Carbonara -->
+                        <article class="recipe-card" data-recipe-id="1">
+                            <div class="recipe-card__image-wrap">
+                                <img
+                                    class="recipe-card__image"
+                                    src="https://placehold.co/600x400/e76f51/ffffff?text=Spaghetti+Carbonara"
+                                    alt="A bowl of spaghetti carbonara with crispy guanciale and a dusting of black pepper">
+                                <div class="recipe-card__overlay" aria-hidden="true">
+                                    <span>Spaghetti Carbonara</span>
+                                </div>
+                            </div>
+                            <div class="recipe-card__body">
+                                <span class="recipe-card__category">Italian</span>
+                                <h3 class="recipe-card__title">Spaghetti Carbonara</h3>
+                                <ul class="recipe-card__tags">
+                                    <li>Quick</li>
+                                    <li>Pasta</li>
+                                </ul>
+                                <div class="recipe-card__meta">
+                                    <span>⏱ 20 min</span>
+                                    <span>🕒 25 min</span>
+                                    <span>Easy</span>
+                                </div>
+                                <p class="recipe-card__description">Classic Roman pasta with eggs, Pecorino Romano, and guanciale — no cream.</p>
+                            </div>
+                        </article>
+
+                        <!-- Recipe 2: Thai Green Curry -->
+                        <article class="recipe-card" data-recipe-id="2">
+                            <div class="recipe-card__image-wrap">
+                                <img
+                                    class="recipe-card__image"
+                                    src="https://placehold.co/600x400/2a9d8f/ffffff?text=Thai+Green+Curry"
+                                    alt="A bowl of fragrant Thai green curry with coconut milk and fresh basil">
+                                <div class="recipe-card__overlay" aria-hidden="true">
+                                    <span>Thai Green Curry</span>
+                                </div>
+                            </div>
+                            <div class="recipe-card__body">
+                                <span class="recipe-card__category">Thai</span>
+                                <h3 class="recipe-card__title">Thai Green Curry</h3>
+                                <ul class="recipe-card__tags">
+                                    <li>Vegetarian</li>
+                                    <li>Spicy</li>
+                                </ul>
+                                <div class="recipe-card__meta">
+                                    <span>⏱ 15 min</span>
+                                    <span>🕒 35 min</span>
+                                    <span>Medium</span>
+                                </div>
+                                <p class="recipe-card__description">Aromatic green curry with coconut milk, Thai basil, and fresh vegetables.</p>
+                            </div>
+                        </article>
+
+                        <!-- Recipe 3: Avocado Toast -->
+                        <article class="recipe-card" data-recipe-id="3">
+                            <div class="recipe-card__image-wrap">
+                                <img
+                                    class="recipe-card__image"
+                                    src="https://placehold.co/600x400/264653/ffffff?text=Avocado+Toast"
+                                    alt="Thick-cut sourdough toast topped with smashed avocado and chilli flakes">
+                                <div class="recipe-card__overlay" aria-hidden="true">
+                                    <span>Avocado Toast</span>
+                                </div>
+                            </div>
+                            <div class="recipe-card__body">
+                                <span class="recipe-card__category">American</span>
+                                <h3 class="recipe-card__title">Avocado Toast</h3>
+                                <ul class="recipe-card__tags">
+                                    <li>Vegan</li>
+                                    <li>Breakfast</li>
+                                </ul>
+                                <div class="recipe-card__meta">
+                                    <span>⏱ 5 min</span>
+                                    <span>🕒 5 min</span>
+                                    <span>Easy</span>
+                                </div>
+                                <p class="recipe-card__description">Creamy smashed avocado on sourdough with lemon, chilli flakes, and sea salt.</p>
+                            </div>
+                        </article>
+
+                        <!-- Recipe 4: Chicken Stir-Fry -->
+                        <article class="recipe-card" data-recipe-id="4">
+                            <div class="recipe-card__image-wrap">
+                                <img
+                                    class="recipe-card__image"
+                                    src="https://placehold.co/600x400/f4a261/ffffff?text=Chicken+Stir-Fry"
+                                    alt="Wok-tossed chicken and colourful vegetables in a glossy soy-ginger sauce">
+                                <div class="recipe-card__overlay" aria-hidden="true">
+                                    <span>Chicken Stir-Fry</span>
+                                </div>
+                            </div>
+                            <div class="recipe-card__body">
+                                <span class="recipe-card__category">Chinese</span>
+                                <h3 class="recipe-card__title">Chicken Stir-Fry</h3>
+                                <ul class="recipe-card__tags">
+                                    <li>Quick</li>
+                                    <li>High Protein</li>
+                                </ul>
+                                <div class="recipe-card__meta">
+                                    <span>⏱ 10 min</span>
+                                    <span>🕒 20 min</span>
+                                    <span>Easy</span>
+                                </div>
+                                <p class="recipe-card__description">Tender chicken and crisp vegetables tossed in a savory soy-ginger glaze.</p>
+                            </div>
+                        </article>
+
+                        <!-- Recipe 5: Mushroom Risotto -->
+                        <article class="recipe-card" data-recipe-id="5">
+                            <div class="recipe-card__image-wrap">
+                                <img
+                                    class="recipe-card__image"
+                                    src="https://placehold.co/600x400/6d4c41/ffffff?text=Mushroom+Risotto"
+                                    alt="Creamy mushroom risotto garnished with parmesan and fresh thyme">
+                                <div class="recipe-card__overlay" aria-hidden="true">
+                                    <span>Mushroom Risotto</span>
+                                </div>
+                            </div>
+                            <div class="recipe-card__body">
+                                <span class="recipe-card__category">Italian</span>
+                                <h3 class="recipe-card__title">Mushroom Risotto</h3>
+                                <ul class="recipe-card__tags">
+                                    <li>Vegetarian</li>
+                                    <li>Comfort Food</li>
+                                </ul>
+                                <div class="recipe-card__meta">
+                                    <span>⏱ 30 min</span>
+                                    <span>🕒 40 min</span>
+                                    <span>Medium</span>
+                                </div>
+                                <p class="recipe-card__description">Silky, slow-stirred risotto packed with mixed mushrooms and finished with parmesan.</p>
+                            </div>
+                        </article>
+
+                        <!-- Recipe 6: Greek Salad -->
+                        <article class="recipe-card" data-recipe-id="6">
+                            <div class="recipe-card__image-wrap">
+                                <img
+                                    class="recipe-card__image"
+                                    src="https://placehold.co/600x400/457b9d/ffffff?text=Greek+Salad"
+                                    alt="A fresh Greek salad with tomatoes, cucumber, olives, and feta cheese">
+                                <div class="recipe-card__overlay" aria-hidden="true">
+                                    <span>Greek Salad</span>
+                                </div>
+                            </div>
+                            <div class="recipe-card__body">
+                                <span class="recipe-card__category">Mediterranean</span>
+                                <h3 class="recipe-card__title">Greek Salad</h3>
+                                <ul class="recipe-card__tags">
+                                    <li>Vegetarian</li>
+                                    <li>Gluten-Free</li>
+                                </ul>
+                                <div class="recipe-card__meta">
+                                    <span>⏱ 10 min</span>
+                                    <span>🕒 10 min</span>
+                                    <span>Easy</span>
+                                </div>
+                                <p class="recipe-card__description">Refreshing combination of tomatoes, cucumber, olives, red onion, and creamy feta.</p>
+                            </div>
+                        </article>
+
+                    </div>
+                </section>
+
+                <!-- Media data table -->
+                <section id="media-library" aria-label="Recipe media library">
+                    <h2>Media Library</h2>
+                    <p>Images, videos, and audio guides linked to our recipe collection.</p>
+                    <div class="table-scroll-wrapper">
+                        <table id="media-table" aria-label="Recipe media library">
+                            <caption class="visually-hidden">Recipe media items including images, videos, and audio guides</caption>
+                            <thead>
+                                <tr>
+                                    <th scope="col">Preview</th>
+                                    <th scope="col">Title</th>
+                                    <th scope="col">Category</th>
+                                    <th scope="col">Type</th>
+                                    <th scope="col">Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <a href="https://placehold.co/600x400/e76f51/ffffff?text=Carbonara" target="_blank" rel="noopener noreferrer">
+                                            <img
+                                                src="https://placehold.co/600x400/e76f51/ffffff?text=Carbonara"
+                                                alt="Spaghetti Carbonara hero">
+                                        </a>
+                                    </td>
+                                    <td class="media-table__title">Spaghetti Carbonara Hero</td>
+                                    <td class="media-table__category">Main Course</td>
+                                    <td class="media-table__type">Image</td>
+                                    <td class="media-table__description">High-resolution hero image of the finished carbonara dish.</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <a href="https://placehold.co/600x400/2a9d8f/ffffff?text=Curry+Video" target="_blank" rel="noopener noreferrer">
+                                            <img
+                                                src="https://placehold.co/600x400/2a9d8f/ffffff?text=Curry+Video"
+                                                alt="Thai Green Curry step-by-step video thumbnail">
+                                        </a>
+                                    </td>
+                                    <td class="media-table__title">Thai Green Curry — Step by Step</td>
+                                    <td class="media-table__category">Main Course</td>
+                                    <td class="media-table__type">Video</td>
+                                    <td class="media-table__description">15-minute walkthrough covering curry paste preparation and coconut milk technique.</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <a href="https://placehold.co/600x400/264653/ffffff?text=Knife+Skills" target="_blank" rel="noopener noreferrer">
+                                            <img
+                                                src="https://placehold.co/600x400/264653/ffffff?text=Knife+Skills"
+                                                alt="Knife skills technique video thumbnail">
+                                        </a>
+                                    </td>
+                                    <td class="media-table__title">Knife Skills Masterclass</td>
+                                    <td class="media-table__category">Technique</td>
+                                    <td class="media-table__type">Video</td>
+                                    <td class="media-table__description">Essential cuts — julienne, chiffonade, and brunoise — demonstrated at beginner speed.</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <a href="https://placehold.co/600x400/f4a261/ffffff?text=Pantry+Guide" target="_blank" rel="noopener noreferrer">
+                                            <img
+                                                src="https://placehold.co/600x400/f4a261/ffffff?text=Pantry+Guide"
+                                                alt="Pantry essentials audio guide cover art">
+                                        </a>
+                                    </td>
+                                    <td class="media-table__title">Pantry Essentials Guide</td>
+                                    <td class="media-table__category">Tips</td>
+                                    <td class="media-table__type">Audio</td>
+                                    <td class="media-table__description">20-minute audio guide covering the 12 pantry staples every home cook needs.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Recipy. All rights reserved.</p>
+            <ul class="footer-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="recipes.html">Recipes</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </div>
+    </footer>
+
+</body>
+</html>
