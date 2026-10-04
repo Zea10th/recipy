@@ -267,7 +267,7 @@ function openRecipeModal(recipeId) {
         .map(ing => `<li class="mb-1">• ${ing}</li>`)
         .join('');
 
-    const modal = new bootstrap.Modal(modalEl);
+    const modal = bootstrap.Modal.getOrCreateInstance(modalEl);
     modal.show();
 }
 

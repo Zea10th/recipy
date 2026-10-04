@@ -1047,3 +1047,23 @@ dialog.my-popup {
     color: #fff !important;
     transition: background-color 0.2s ease, color 0.2s ease;
 }
+
+/* ============================================================
+   External Recipes Section (API-driven)
+   ============================================================ */
+
+#external-recipes {
+    border-top: 1px solid var(--color-border);
+    padding-top: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
+}
+
+.external-loading {
+    display: flex;
+    justify-content: center;
+    padding: 2rem 0;
+}
+
+.external-recipe-error {
+    color: var(--color-text-muted);
+}
