@@ -175,10 +175,20 @@
                                placeholder="e.g. Recipe suggestion">
                     </div>
                     <div class="contact-form__field mb-3">
+                        <label for="contact-rating" class="form-label">Rating (1–10)</label>
+                        <input type="text" id="contact-rating" name="rating"
+                               class="form-control" inputmode="numeric"
+                               placeholder="e.g. 8"
+                               aria-describedby="contact-rating-help">
+                        <div id="contact-rating-help" class="form-text">Optional. Enter a whole number from 1 to 10.</div>
+                    </div>
+                    <div class="contact-form__field mb-3">
                         <label for="contact-message" class="form-label">Message</label>
                         <textarea id="contact-message" name="message"
                                   class="form-control"
-                                  placeholder="Tell us what's on your mind…" required></textarea>
+                                  placeholder="Tell us what's on your mind…"
+                                  aria-describedby="contact-message-help" required></textarea>
+                        <div id="contact-message-help" class="form-text">3–300 characters. These characters are not allowed: " ' ; . ( ) %</div>
                     </div>
                     <button type="submit" class="btn btn-primary">Send Message</button>
                 </form>
@@ -203,6 +213,7 @@
             integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
             crossorigin="anonymous">
     </script>
+    <script src="js/feedback-rules.js" defer></script>
     <script src="js/contact.js" defer></script>
     <script src="js/app.js" defer></script>
 </body>

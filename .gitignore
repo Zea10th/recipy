@@ -13,3 +13,10 @@ Thumbs.db
 
 # Draw.io
 .$*.drawio.bkp
+
+# Test tooling and runtime data
+node_modules/
+coverage/
+reports/
+tmp/
+.stryker-tmp/
