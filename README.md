@@ -12,7 +12,7 @@ A recipe finder web application for busy people who love good food but have limi
 
 ## How to Open
 
-No server, build tools, or dependencies required. Open any HTML file directly in your browser:
+No server, build tools, or dependencies are required to browse the pages. Open any HTML file directly in your browser:
 
 - **Windows**: Double-click `index.html` in File Explorer, or run `start index.html` in a terminal.
 - **macOS**: Double-click `index.html` in Finder, or run `open index.html` in a terminal.
@@ -22,6 +22,25 @@ Navigate between pages using the navigation bar inside the app.
 
 > **Note:** The Recipes page fetches data from a public API. An active internet connection is required for dynamically
 > loaded recipe content. All other pages work fully offline.
+
+## Saving Feedback
+
+Messages sent through the Contact Us form on the About page are stored by a small local service, because a web page
+cannot write files on its own. The service needs Node.js 20 or newer and has no runtime dependencies:
+
+```bash
+npm install
+npm run start:feedback-service
+```
+
+The service listens on `127.0.0.1:3001` and appends every accepted message to `tmp/feedback/feedback.json` (a JSON array;
+the folder is created automatically and is excluded from version control because it contains visitors' names and email
+addresses). Stop it with `Ctrl+C`. While the service is not running, the form still validates input, but submitting a
+valid message shows "We could not send your message. Please try again later." and keeps what was typed.
+
+Each stored record contains `id`, `savedAt`, `name`, `email`, `subject`, `rating` and `comment`. The service checks every
+rule again, accepts requests only from pages opened from disk or from `localhost`, and has no limit on the number of
+stored messages for now.
 
 ## Features by Phase
 
@@ -47,7 +66,8 @@ Navigate between pages using the navigation bar inside the app.
 - Recipe detail overlay (Bootstrap Modal) — opens on card click, closable via button, backdrop click, or Escape key;
   background scroll is locked while open
 - Contact form client-side validation with field-specific error messages and a success confirmation on valid submission;
-  whitespace-only fields treated as empty
+  whitespace-only fields treated as empty; the message must be 3–300 characters and must not contain `"` `'` `;` `.` `(`
+  `)` `%`; an optional rating accepts whole numbers from 1 to 10
 - Scroll-triggered section animations — content fades in as it enters the viewport
 - JavaScript collapsible content blocks with smooth transitions independent of each other
 - Five DOM event types handled: `DOMContentLoaded`, `click`, `submit`, `input`, `scroll`
@@ -75,11 +95,51 @@ Navigate between pages using the navigation bar inside the app.
 ├── css/
 │   └── styles.css      — Single external stylesheet
 ├── js/
-│   ├── app.js          — Shared initialisation and scroll animations
-│   ├── recipes.js      — Recipe card rendering, overlay, and filter logic
-│   ├── api.js          — API calls, JSON parsing, and error handling
-│   └── contact.js      — Contact form validation
+│   ├── app.js              — Shared initialisation and scroll animations
+│   ├── recipes.js          — Recipe card rendering, overlay, and filter logic
+│   ├── api.js              — API calls, JSON parsing, and error handling
+│   ├── feedback-rules.js   — Feedback validation rules shared by the form and the save service
+│   └── contact.js          — Contact form handling and sending feedback to the save service
+├── server/
+│   ├── feedback-store.js   — Appends records to the JSON file safely
+│   ├── server.js           — HTTP handling and validation of incoming feedback
+│   └── start.js            — Starts the local feedback save service
+├── tests/unit/             — Unit tests for the feedback code
+├── tmp/feedback/           — Stored messages (created at runtime, not committed)
+├── package.json            — Test and service scripts (development tooling only)
+├── jest.config.js          — Test runner and coverage thresholds
+├── stryker.config.json     — Mutation testing configuration
 └── design/
     ├── wireframes.drawio   — draw.io wireframe source
-    └── wireframes-*.png    — PNG export for quick preview
+    ├── wireframes-*.png    — PNG export for quick preview
+    └── processes/          — Business process diagrams (feedback save flow)
 ```
+
+## Running the Tests
+
+The feedback code (`js/feedback-rules.js`, `js/contact.js`, `server/feedback-store.js`, `server/server.js`) has unit
+tests with 100% statement, branch and decision coverage, checked by mutation testing. Requires Node.js 20 or newer.
+
+```bash
+npm install                 # once
+npm test                    # run the unit tests
+npm run test:coverage       # tests + coverage report (fails below 100%); HTML report in coverage/lcov-report/
+npm run test:mutation       # mutation analysis; HTML report in reports/mutation/mutation.html
+```
+
+Mutation analysis runs every standard StrykerJS mutator category. Categories that produced mutants for this code:
+ConditionalExpression, StringLiteral, BlockStatement, EqualityOperator, ObjectLiteral, BooleanLiteral, Regex,
+MethodExpression, CallExpression, LogicalOperator, ArrowFunction, ArrayDeclaration, AssignmentOperator and
+OptionalChaining (14 categories). ArithmeticOperator, UpdateOperator and UnaryOperator produced no mutants because the
+code has no matching constructs. Mutation score: 100% (every mutant is killed or ignored with a justification below).
+A full mutation run takes about 7 minutes; the unit tests take about 40 seconds with coverage.
+
+### Equivalent mutants
+
+Mutants that cannot change observable behavior are ignored in the source with a `Stryker disable` comment:
+
+| File | Ignored construct | Justification |
+|------|-------------------|---------------|
+| `js/feedback-rules.js`, `js/contact.js` | `if (typeof module !== 'undefined')` export guard | The export exists only for tests and the save service; the browser-only branch cannot run in the test environment |
+| `server/feedback-store.js` | `'utf8'` argument of `readFile` | Without an encoding Node returns a Buffer, which `JSON.parse` converts to the same text |
+| `server/server.js` | `receivedBytes <= MAX_REQUEST_BODY_BYTES` condition while draining the body | Keeping every chunk instead of dropping the surplus changes memory use only; the 413 answer is the same |

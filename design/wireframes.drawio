@@ -342,7 +342,7 @@
           <mxGeometry height="38" width="1089" x="40" y="412" as="geometry" />
         </mxCell>
         <mxCell id="20" parent="1" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;align=left;spacingTop=4;spacingLeft=8;fontSize=10;fontStyle=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="[Section: Contact — id=&quot;contact&quot;]" vertex="1">
-          <mxGeometry height="250" width="1129" x="20" y="480" as="geometry" />
+          <mxGeometry height="350" width="1129" x="20" y="480" as="geometry" />
         </mxCell>
         <mxCell id="21" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontSize=10;fillColor=#f5f5f5;strokeColor=#999999;" value="[text] Your name (name=&quot;name&quot;) *required" vertex="1">
           <mxGeometry height="50" width="520" x="40" y="515" as="geometry" />
@@ -353,14 +353,17 @@
         <mxCell id="23" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontSize=10;fillColor=#f5f5f5;strokeColor=#999999;" value="[text] Subject (name=&quot;subject&quot;)" vertex="1">
           <mxGeometry height="50" width="1060" x="40" y="575" as="geometry" />
         </mxCell>
-        <mxCell id="24" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontSize=10;fillColor=#f5f5f5;strokeColor=#999999;" value="[textarea] Your message (name=&quot;message&quot;) *required" vertex="1">
-          <mxGeometry height="70" width="1060" x="40" y="635" as="geometry" />
+        <mxCell id="27" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontSize=10;fillColor=#f5f5f5;strokeColor=#999999;" value="[text] Rating 1–10 (name=&quot;rating&quot;) optional — whole number" vertex="1">
+          <mxGeometry height="50" width="1060" x="40" y="635" as="geometry" />
+        </mxCell>
+        <mxCell id="24" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontSize=10;fillColor=#f5f5f5;strokeColor=#999999;" value="[textarea] Your message (name=&quot;message&quot;) *required — 3–300 characters; not allowed: &quot; ' ; . ( ) %" vertex="1">
+          <mxGeometry height="70" width="1060" x="40" y="695" as="geometry" />
         </mxCell>
         <mxCell id="25" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontSize=11;fontStyle=1;fillColor=#f8cecc;strokeColor=#b85450;" value="[submit] Send Message" vertex="1">
-          <mxGeometry height="40" width="220" x="880" y="715" as="geometry" />
+          <mxGeometry height="40" width="220" x="880" y="775" as="geometry" />
         </mxCell>
         <mxCell id="26" parent="1" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=middle;align=center;fontSize=10;fontStyle=1;fillColor=#f5f5f5;strokeColor=#999999;" value="[Section: Footer] — © Recipy  |  [nav] Home  |  [nav] Recipes  |  [nav] About" vertex="1">
-          <mxGeometry height="50" width="1129" x="20" y="750" as="geometry" />
+          <mxGeometry height="50" width="1129" x="20" y="850" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
